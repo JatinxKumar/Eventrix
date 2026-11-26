@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🎯 Eventrix
@@ -47,17 +46,17 @@ Eventrix addresses these challenges through workflow automation and role-based e
 
 ## ✨ Core Platform Features
 
-| Module | Description |
-|--------|-------------|
-| 🎫 Event Management | Create, discover, and manage events |
-| 👥 Team Registration | Support individual and team participation |
-| 📱 QR Attendance | Digital attendance and participant verification |
+| Module                    | Description                                           |
+| ------------------------- | ----------------------------------------------------- |
+| 🎫 Event Management       | Create, discover, and manage events                   |
+| 👥 Team Registration      | Support individual and team participation             |
+| 📱 QR Attendance          | Digital attendance and participant verification       |
 | 🏆 Competition Management | Manage hackathon rounds, submissions, and evaluations |
-| 📝 Digital Logbook | Track participant progress and mentor feedback |
-| 📧 Email Automation | Registration confirmations and event notifications |
-| 📜 Certificates | Automated PDF certificate generation |
-| 📊 Analytics | Centralized event and participation insights |
-| 🔐 Role-Based Access | Dedicated permissions for different users |
+| 📝 Digital Logbook        | Track participant progress and mentor feedback        |
+| 📧 Email Automation       | Registration confirmations and event notifications    |
+| 📜 Certificates           | Automated PDF certificate generation                  |
+| 📊 Analytics              | Centralized event and participation insights          |
+| 🔐 Role-Based Access      | Dedicated permissions for different users             |
 
 The platform is under active development, with modules being implemented and refined incrementally.
 
@@ -134,14 +133,14 @@ flowchart LR
 
 ## 🛠️ Technology Stack
 
-| Technology | Purpose |
-|------------|---------|
-| React | Component-based frontend development |
-| TypeScript | Type-safe application development |
-| TanStack Start | Application framework and routing |
-| Tailwind CSS | Responsive user interface |
-| Lucide React | Icons and visual components |
-| Git & GitHub | Version control and collaboration |
+| Technology     | Purpose                              |
+| -------------- | ------------------------------------ |
+| React          | Component-based frontend development |
+| TypeScript     | Type-safe application development    |
+| TanStack Start | Application framework and routing    |
+| Tailwind CSS   | Responsive user interface            |
+| Lucide React   | Icons and visual components          |
+| Git & GitHub   | Version control and collaboration    |
 
 ---
 

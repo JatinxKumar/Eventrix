@@ -10,33 +10,372 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as AuthCallbackRouteImport } from './routes/auth/callback'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as DashboardAdminRouteImport } from './routes/dashboard/admin'
+import { Route as DashboardOrganizerRouteImport } from './routes/dashboard/organizer'
+import { Route as DashboardParticipantRouteImport } from './routes/dashboard/participant'
+import { Route as EventsIndexRouteImport } from './routes/events/index'
+import { Route as EventsSlugRouteImport } from './routes/events/$slug'
+import { Route as DashboardAdminIndexRouteImport } from './routes/dashboard/admin/index'
+import { Route as DashboardAdminOrganizersRouteImport } from './routes/dashboard/admin/organizers'
+import { Route as DashboardOrganizerIndexRouteImport } from './routes/dashboard/organizer/index'
+import { Route as DashboardParticipantIndexRouteImport } from './routes/dashboard/participant/index'
+import { Route as DashboardParticipantProfileRouteImport } from './routes/dashboard/participant/profile'
+import { Route as EventsSlugRegisterRouteImport } from './routes/events/$slug/register'
+import { Route as DashboardAdminEventsIndexRouteImport } from './routes/dashboard/admin/events/index'
+import { Route as DashboardAdminEventsNewRouteImport } from './routes/dashboard/admin/events/new'
+import { Route as DashboardOrganizerEventsIndexRouteImport } from './routes/dashboard/organizer/events/index'
+import { Route as DashboardParticipantEventsIndexRouteImport } from './routes/dashboard/participant/events/index'
+import { Route as DashboardParticipantRegistrationsIndexRouteImport } from './routes/dashboard/participant/registrations/index'
+import { Route as DashboardParticipantRegistrationsRegistrationIdRouteImport } from './routes/dashboard/participant/registrations/$registrationId'
+import { Route as DashboardParticipantTeamsIndexRouteImport } from './routes/dashboard/participant/teams/index'
+import { Route as DashboardParticipantTeamsTeamIdRouteImport } from './routes/dashboard/participant/teams/$teamId'
+import { Route as DashboardAdminEventsEventIdIndexRouteImport } from './routes/dashboard/admin/events/$eventId/index'
+import { Route as DashboardAdminEventsEventIdEditRouteImport } from './routes/dashboard/admin/events/$eventId/edit'
+import { Route as DashboardOrganizerEventsEventIdIndexRouteImport } from './routes/dashboard/organizer/events/$eventId/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthCallbackRoute = AuthCallbackRouteImport.update({
+  id: '/auth/callback',
+  path: '/auth/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAdminRoute = DashboardAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardOrganizerRoute = DashboardOrganizerRouteImport.update({
+  id: '/organizer',
+  path: '/organizer',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardParticipantRoute = DashboardParticipantRouteImport.update({
+  id: '/participant',
+  path: '/participant',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsSlugRoute = EventsSlugRouteImport.update({
+  id: '/events/$slug',
+  path: '/events/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardAdminIndexRoute = DashboardAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardAdminRoute,
+} as any)
+const DashboardAdminOrganizersRoute =
+  DashboardAdminOrganizersRouteImport.update({
+    id: '/organizers',
+    path: '/organizers',
+    getParentRoute: () => DashboardAdminRoute,
+  } as any)
+const DashboardOrganizerIndexRoute = DashboardOrganizerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardOrganizerRoute,
+} as any)
+const DashboardParticipantIndexRoute =
+  DashboardParticipantIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardParticipantProfileRoute =
+  DashboardParticipantProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const EventsSlugRegisterRoute = EventsSlugRegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => EventsSlugRoute,
+} as any)
+const DashboardAdminEventsIndexRoute =
+  DashboardAdminEventsIndexRouteImport.update({
+    id: '/events/',
+    path: '/events/',
+    getParentRoute: () => DashboardAdminRoute,
+  } as any)
+const DashboardAdminEventsNewRoute = DashboardAdminEventsNewRouteImport.update({
+  id: '/events/new',
+  path: '/events/new',
+  getParentRoute: () => DashboardAdminRoute,
+} as any)
+const DashboardOrganizerEventsIndexRoute =
+  DashboardOrganizerEventsIndexRouteImport.update({
+    id: '/events/',
+    path: '/events/',
+    getParentRoute: () => DashboardOrganizerRoute,
+  } as any)
+const DashboardParticipantEventsIndexRoute =
+  DashboardParticipantEventsIndexRouteImport.update({
+    id: '/events/',
+    path: '/events/',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardParticipantRegistrationsIndexRoute =
+  DashboardParticipantRegistrationsIndexRouteImport.update({
+    id: '/registrations/',
+    path: '/registrations/',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardParticipantRegistrationsRegistrationIdRoute =
+  DashboardParticipantRegistrationsRegistrationIdRouteImport.update({
+    id: '/registrations/$registrationId',
+    path: '/registrations/$registrationId',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardParticipantTeamsIndexRoute =
+  DashboardParticipantTeamsIndexRouteImport.update({
+    id: '/teams/',
+    path: '/teams/',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardParticipantTeamsTeamIdRoute =
+  DashboardParticipantTeamsTeamIdRouteImport.update({
+    id: '/teams/$teamId',
+    path: '/teams/$teamId',
+    getParentRoute: () => DashboardParticipantRoute,
+  } as any)
+const DashboardAdminEventsEventIdIndexRoute =
+  DashboardAdminEventsEventIdIndexRouteImport.update({
+    id: '/events/$eventId/',
+    path: '/events/$eventId/',
+    getParentRoute: () => DashboardAdminRoute,
+  } as any)
+const DashboardAdminEventsEventIdEditRoute =
+  DashboardAdminEventsEventIdEditRouteImport.update({
+    id: '/events/$eventId/edit',
+    path: '/events/$eventId/edit',
+    getParentRoute: () => DashboardAdminRoute,
+  } as any)
+const DashboardOrganizerEventsEventIdIndexRoute =
+  DashboardOrganizerEventsEventIdIndexRouteImport.update({
+    id: '/events/$eventId/',
+    path: '/events/$eventId/',
+    getParentRoute: () => DashboardOrganizerRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/auth/callback': typeof AuthCallbackRoute
+  '/dashboard/admin': typeof DashboardAdminRouteWithChildren
+  '/dashboard/organizer': typeof DashboardOrganizerRouteWithChildren
+  '/dashboard/participant': typeof DashboardParticipantRouteWithChildren
+  '/events/$slug': typeof EventsSlugRouteWithChildren
+  '/dashboard/': typeof DashboardIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/dashboard/admin/organizers': typeof DashboardAdminOrganizersRoute
+  '/dashboard/participant/profile': typeof DashboardParticipantProfileRoute
+  '/events/$slug/register': typeof EventsSlugRegisterRoute
+  '/dashboard/admin/': typeof DashboardAdminIndexRoute
+  '/dashboard/organizer/': typeof DashboardOrganizerIndexRoute
+  '/dashboard/participant/': typeof DashboardParticipantIndexRoute
+  '/dashboard/admin/events/new': typeof DashboardAdminEventsNewRoute
+  '/dashboard/participant/registrations/$registrationId': typeof DashboardParticipantRegistrationsRegistrationIdRoute
+  '/dashboard/participant/teams/$teamId': typeof DashboardParticipantTeamsTeamIdRoute
+  '/dashboard/admin/events/': typeof DashboardAdminEventsIndexRoute
+  '/dashboard/organizer/events/': typeof DashboardOrganizerEventsIndexRoute
+  '/dashboard/participant/events/': typeof DashboardParticipantEventsIndexRoute
+  '/dashboard/participant/registrations/': typeof DashboardParticipantRegistrationsIndexRoute
+  '/dashboard/participant/teams/': typeof DashboardParticipantTeamsIndexRoute
+  '/dashboard/admin/events/$eventId/edit': typeof DashboardAdminEventsEventIdEditRoute
+  '/dashboard/admin/events/$eventId/': typeof DashboardAdminEventsEventIdIndexRoute
+  '/dashboard/organizer/events/$eventId/': typeof DashboardOrganizerEventsEventIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/auth/callback': typeof AuthCallbackRoute
+  '/events/$slug': typeof EventsSlugRouteWithChildren
+  '/dashboard': typeof DashboardIndexRoute
+  '/events': typeof EventsIndexRoute
+  '/dashboard/admin/organizers': typeof DashboardAdminOrganizersRoute
+  '/dashboard/participant/profile': typeof DashboardParticipantProfileRoute
+  '/events/$slug/register': typeof EventsSlugRegisterRoute
+  '/dashboard/admin': typeof DashboardAdminIndexRoute
+  '/dashboard/organizer': typeof DashboardOrganizerIndexRoute
+  '/dashboard/participant': typeof DashboardParticipantIndexRoute
+  '/dashboard/admin/events/new': typeof DashboardAdminEventsNewRoute
+  '/dashboard/participant/registrations/$registrationId': typeof DashboardParticipantRegistrationsRegistrationIdRoute
+  '/dashboard/participant/teams/$teamId': typeof DashboardParticipantTeamsTeamIdRoute
+  '/dashboard/admin/events': typeof DashboardAdminEventsIndexRoute
+  '/dashboard/organizer/events': typeof DashboardOrganizerEventsIndexRoute
+  '/dashboard/participant/events': typeof DashboardParticipantEventsIndexRoute
+  '/dashboard/participant/registrations': typeof DashboardParticipantRegistrationsIndexRoute
+  '/dashboard/participant/teams': typeof DashboardParticipantTeamsIndexRoute
+  '/dashboard/admin/events/$eventId/edit': typeof DashboardAdminEventsEventIdEditRoute
+  '/dashboard/admin/events/$eventId': typeof DashboardAdminEventsEventIdIndexRoute
+  '/dashboard/organizer/events/$eventId': typeof DashboardOrganizerEventsEventIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/auth/callback': typeof AuthCallbackRoute
+  '/dashboard/admin': typeof DashboardAdminRouteWithChildren
+  '/dashboard/organizer': typeof DashboardOrganizerRouteWithChildren
+  '/dashboard/participant': typeof DashboardParticipantRouteWithChildren
+  '/events/$slug': typeof EventsSlugRouteWithChildren
+  '/dashboard/': typeof DashboardIndexRoute
+  '/events/': typeof EventsIndexRoute
+  '/dashboard/admin/organizers': typeof DashboardAdminOrganizersRoute
+  '/dashboard/participant/profile': typeof DashboardParticipantProfileRoute
+  '/events/$slug/register': typeof EventsSlugRegisterRoute
+  '/dashboard/admin/': typeof DashboardAdminIndexRoute
+  '/dashboard/organizer/': typeof DashboardOrganizerIndexRoute
+  '/dashboard/participant/': typeof DashboardParticipantIndexRoute
+  '/dashboard/admin/events/new': typeof DashboardAdminEventsNewRoute
+  '/dashboard/participant/registrations/$registrationId': typeof DashboardParticipantRegistrationsRegistrationIdRoute
+  '/dashboard/participant/teams/$teamId': typeof DashboardParticipantTeamsTeamIdRoute
+  '/dashboard/admin/events/': typeof DashboardAdminEventsIndexRoute
+  '/dashboard/organizer/events/': typeof DashboardOrganizerEventsIndexRoute
+  '/dashboard/participant/events/': typeof DashboardParticipantEventsIndexRoute
+  '/dashboard/participant/registrations/': typeof DashboardParticipantRegistrationsIndexRoute
+  '/dashboard/participant/teams/': typeof DashboardParticipantTeamsIndexRoute
+  '/dashboard/admin/events/$eventId/edit': typeof DashboardAdminEventsEventIdEditRoute
+  '/dashboard/admin/events/$eventId/': typeof DashboardAdminEventsEventIdIndexRoute
+  '/dashboard/organizer/events/$eventId/': typeof DashboardOrganizerEventsEventIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/login'
+    | '/signup'
+    | '/auth/callback'
+    | '/dashboard/admin'
+    | '/dashboard/organizer'
+    | '/dashboard/participant'
+    | '/events/$slug'
+    | '/dashboard/'
+    | '/events/'
+    | '/dashboard/admin/organizers'
+    | '/dashboard/participant/profile'
+    | '/events/$slug/register'
+    | '/dashboard/admin/'
+    | '/dashboard/organizer/'
+    | '/dashboard/participant/'
+    | '/dashboard/admin/events/new'
+    | '/dashboard/participant/registrations/$registrationId'
+    | '/dashboard/participant/teams/$teamId'
+    | '/dashboard/admin/events/'
+    | '/dashboard/organizer/events/'
+    | '/dashboard/participant/events/'
+    | '/dashboard/participant/registrations/'
+    | '/dashboard/participant/teams/'
+    | '/dashboard/admin/events/$eventId/edit'
+    | '/dashboard/admin/events/$eventId/'
+    | '/dashboard/organizer/events/$eventId/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/login'
+    | '/signup'
+    | '/auth/callback'
+    | '/events/$slug'
+    | '/dashboard'
+    | '/events'
+    | '/dashboard/admin/organizers'
+    | '/dashboard/participant/profile'
+    | '/events/$slug/register'
+    | '/dashboard/admin'
+    | '/dashboard/organizer'
+    | '/dashboard/participant'
+    | '/dashboard/admin/events/new'
+    | '/dashboard/participant/registrations/$registrationId'
+    | '/dashboard/participant/teams/$teamId'
+    | '/dashboard/admin/events'
+    | '/dashboard/organizer/events'
+    | '/dashboard/participant/events'
+    | '/dashboard/participant/registrations'
+    | '/dashboard/participant/teams'
+    | '/dashboard/admin/events/$eventId/edit'
+    | '/dashboard/admin/events/$eventId'
+    | '/dashboard/organizer/events/$eventId'
+  id:
+    | '__root__'
+    | '/'
+    | '/dashboard'
+    | '/login'
+    | '/signup'
+    | '/auth/callback'
+    | '/dashboard/admin'
+    | '/dashboard/organizer'
+    | '/dashboard/participant'
+    | '/events/$slug'
+    | '/dashboard/'
+    | '/events/'
+    | '/dashboard/admin/organizers'
+    | '/dashboard/participant/profile'
+    | '/events/$slug/register'
+    | '/dashboard/admin/'
+    | '/dashboard/organizer/'
+    | '/dashboard/participant/'
+    | '/dashboard/admin/events/new'
+    | '/dashboard/participant/registrations/$registrationId'
+    | '/dashboard/participant/teams/$teamId'
+    | '/dashboard/admin/events/'
+    | '/dashboard/organizer/events/'
+    | '/dashboard/participant/events/'
+    | '/dashboard/participant/registrations/'
+    | '/dashboard/participant/teams/'
+    | '/dashboard/admin/events/$eventId/edit'
+    | '/dashboard/admin/events/$eventId/'
+    | '/dashboard/organizer/events/$eventId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  SignupRoute: typeof SignupRoute
+  AuthCallbackRoute: typeof AuthCallbackRoute
+  EventsSlugRoute: typeof EventsSlugRouteWithChildren
+  EventsIndexRoute: typeof EventsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +387,299 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/callback': {
+      id: '/auth/callback'
+      path: '/auth/callback'
+      fullPath: '/auth/callback'
+      preLoaderRoute: typeof AuthCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/admin': {
+      id: '/dashboard/admin'
+      path: '/admin'
+      fullPath: '/dashboard/admin'
+      preLoaderRoute: typeof DashboardAdminRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/organizer': {
+      id: '/dashboard/organizer'
+      path: '/organizer'
+      fullPath: '/dashboard/organizer'
+      preLoaderRoute: typeof DashboardOrganizerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/participant': {
+      id: '/dashboard/participant'
+      path: '/participant'
+      fullPath: '/dashboard/participant'
+      preLoaderRoute: typeof DashboardParticipantRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$slug': {
+      id: '/events/$slug'
+      path: '/events/$slug'
+      fullPath: '/events/$slug'
+      preLoaderRoute: typeof EventsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/admin/': {
+      id: '/dashboard/admin/'
+      path: '/'
+      fullPath: '/dashboard/admin/'
+      preLoaderRoute: typeof DashboardAdminIndexRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/admin/organizers': {
+      id: '/dashboard/admin/organizers'
+      path: '/organizers'
+      fullPath: '/dashboard/admin/organizers'
+      preLoaderRoute: typeof DashboardAdminOrganizersRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/organizer/': {
+      id: '/dashboard/organizer/'
+      path: '/'
+      fullPath: '/dashboard/organizer/'
+      preLoaderRoute: typeof DashboardOrganizerIndexRouteImport
+      parentRoute: typeof DashboardOrganizerRoute
+    }
+    '/dashboard/participant/': {
+      id: '/dashboard/participant/'
+      path: '/'
+      fullPath: '/dashboard/participant/'
+      preLoaderRoute: typeof DashboardParticipantIndexRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/participant/profile': {
+      id: '/dashboard/participant/profile'
+      path: '/profile'
+      fullPath: '/dashboard/participant/profile'
+      preLoaderRoute: typeof DashboardParticipantProfileRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/events/$slug/register': {
+      id: '/events/$slug/register'
+      path: '/register'
+      fullPath: '/events/$slug/register'
+      preLoaderRoute: typeof EventsSlugRegisterRouteImport
+      parentRoute: typeof EventsSlugRoute
+    }
+    '/dashboard/admin/events/': {
+      id: '/dashboard/admin/events/'
+      path: '/events'
+      fullPath: '/dashboard/admin/events/'
+      preLoaderRoute: typeof DashboardAdminEventsIndexRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/admin/events/new': {
+      id: '/dashboard/admin/events/new'
+      path: '/events/new'
+      fullPath: '/dashboard/admin/events/new'
+      preLoaderRoute: typeof DashboardAdminEventsNewRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/organizer/events/': {
+      id: '/dashboard/organizer/events/'
+      path: '/events'
+      fullPath: '/dashboard/organizer/events/'
+      preLoaderRoute: typeof DashboardOrganizerEventsIndexRouteImport
+      parentRoute: typeof DashboardOrganizerRoute
+    }
+    '/dashboard/participant/events/': {
+      id: '/dashboard/participant/events/'
+      path: '/events'
+      fullPath: '/dashboard/participant/events/'
+      preLoaderRoute: typeof DashboardParticipantEventsIndexRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/participant/registrations/': {
+      id: '/dashboard/participant/registrations/'
+      path: '/registrations'
+      fullPath: '/dashboard/participant/registrations/'
+      preLoaderRoute: typeof DashboardParticipantRegistrationsIndexRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/participant/registrations/$registrationId': {
+      id: '/dashboard/participant/registrations/$registrationId'
+      path: '/registrations/$registrationId'
+      fullPath: '/dashboard/participant/registrations/$registrationId'
+      preLoaderRoute: typeof DashboardParticipantRegistrationsRegistrationIdRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/participant/teams/': {
+      id: '/dashboard/participant/teams/'
+      path: '/teams'
+      fullPath: '/dashboard/participant/teams/'
+      preLoaderRoute: typeof DashboardParticipantTeamsIndexRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/participant/teams/$teamId': {
+      id: '/dashboard/participant/teams/$teamId'
+      path: '/teams/$teamId'
+      fullPath: '/dashboard/participant/teams/$teamId'
+      preLoaderRoute: typeof DashboardParticipantTeamsTeamIdRouteImport
+      parentRoute: typeof DashboardParticipantRoute
+    }
+    '/dashboard/admin/events/$eventId/': {
+      id: '/dashboard/admin/events/$eventId/'
+      path: '/events/$eventId'
+      fullPath: '/dashboard/admin/events/$eventId/'
+      preLoaderRoute: typeof DashboardAdminEventsEventIdIndexRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/admin/events/$eventId/edit': {
+      id: '/dashboard/admin/events/$eventId/edit'
+      path: '/events/$eventId/edit'
+      fullPath: '/dashboard/admin/events/$eventId/edit'
+      preLoaderRoute: typeof DashboardAdminEventsEventIdEditRouteImport
+      parentRoute: typeof DashboardAdminRoute
+    }
+    '/dashboard/organizer/events/$eventId/': {
+      id: '/dashboard/organizer/events/$eventId/'
+      path: '/events/$eventId'
+      fullPath: '/dashboard/organizer/events/$eventId/'
+      preLoaderRoute: typeof DashboardOrganizerEventsEventIdIndexRouteImport
+      parentRoute: typeof DashboardOrganizerRoute
+    }
   }
 }
 
+interface DashboardAdminRouteChildren {
+  DashboardAdminOrganizersRoute: typeof DashboardAdminOrganizersRoute
+  DashboardAdminIndexRoute: typeof DashboardAdminIndexRoute
+  DashboardAdminEventsNewRoute: typeof DashboardAdminEventsNewRoute
+  DashboardAdminEventsIndexRoute: typeof DashboardAdminEventsIndexRoute
+  DashboardAdminEventsEventIdEditRoute: typeof DashboardAdminEventsEventIdEditRoute
+  DashboardAdminEventsEventIdIndexRoute: typeof DashboardAdminEventsEventIdIndexRoute
+}
+
+const DashboardAdminRouteChildren: DashboardAdminRouteChildren = {
+  DashboardAdminOrganizersRoute: DashboardAdminOrganizersRoute,
+  DashboardAdminIndexRoute: DashboardAdminIndexRoute,
+  DashboardAdminEventsNewRoute: DashboardAdminEventsNewRoute,
+  DashboardAdminEventsIndexRoute: DashboardAdminEventsIndexRoute,
+  DashboardAdminEventsEventIdEditRoute: DashboardAdminEventsEventIdEditRoute,
+  DashboardAdminEventsEventIdIndexRoute: DashboardAdminEventsEventIdIndexRoute,
+}
+
+const DashboardAdminRouteWithChildren = DashboardAdminRoute._addFileChildren(
+  DashboardAdminRouteChildren,
+)
+
+interface DashboardOrganizerRouteChildren {
+  DashboardOrganizerIndexRoute: typeof DashboardOrganizerIndexRoute
+  DashboardOrganizerEventsIndexRoute: typeof DashboardOrganizerEventsIndexRoute
+  DashboardOrganizerEventsEventIdIndexRoute: typeof DashboardOrganizerEventsEventIdIndexRoute
+}
+
+const DashboardOrganizerRouteChildren: DashboardOrganizerRouteChildren = {
+  DashboardOrganizerIndexRoute: DashboardOrganizerIndexRoute,
+  DashboardOrganizerEventsIndexRoute: DashboardOrganizerEventsIndexRoute,
+  DashboardOrganizerEventsEventIdIndexRoute:
+    DashboardOrganizerEventsEventIdIndexRoute,
+}
+
+const DashboardOrganizerRouteWithChildren =
+  DashboardOrganizerRoute._addFileChildren(DashboardOrganizerRouteChildren)
+
+interface DashboardParticipantRouteChildren {
+  DashboardParticipantProfileRoute: typeof DashboardParticipantProfileRoute
+  DashboardParticipantIndexRoute: typeof DashboardParticipantIndexRoute
+  DashboardParticipantRegistrationsRegistrationIdRoute: typeof DashboardParticipantRegistrationsRegistrationIdRoute
+  DashboardParticipantTeamsTeamIdRoute: typeof DashboardParticipantTeamsTeamIdRoute
+  DashboardParticipantEventsIndexRoute: typeof DashboardParticipantEventsIndexRoute
+  DashboardParticipantRegistrationsIndexRoute: typeof DashboardParticipantRegistrationsIndexRoute
+  DashboardParticipantTeamsIndexRoute: typeof DashboardParticipantTeamsIndexRoute
+}
+
+const DashboardParticipantRouteChildren: DashboardParticipantRouteChildren = {
+  DashboardParticipantProfileRoute: DashboardParticipantProfileRoute,
+  DashboardParticipantIndexRoute: DashboardParticipantIndexRoute,
+  DashboardParticipantRegistrationsRegistrationIdRoute:
+    DashboardParticipantRegistrationsRegistrationIdRoute,
+  DashboardParticipantTeamsTeamIdRoute: DashboardParticipantTeamsTeamIdRoute,
+  DashboardParticipantEventsIndexRoute: DashboardParticipantEventsIndexRoute,
+  DashboardParticipantRegistrationsIndexRoute:
+    DashboardParticipantRegistrationsIndexRoute,
+  DashboardParticipantTeamsIndexRoute: DashboardParticipantTeamsIndexRoute,
+}
+
+const DashboardParticipantRouteWithChildren =
+  DashboardParticipantRoute._addFileChildren(DashboardParticipantRouteChildren)
+
+interface DashboardRouteChildren {
+  DashboardAdminRoute: typeof DashboardAdminRouteWithChildren
+  DashboardOrganizerRoute: typeof DashboardOrganizerRouteWithChildren
+  DashboardParticipantRoute: typeof DashboardParticipantRouteWithChildren
+  DashboardIndexRoute: typeof DashboardIndexRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAdminRoute: DashboardAdminRouteWithChildren,
+  DashboardOrganizerRoute: DashboardOrganizerRouteWithChildren,
+  DashboardParticipantRoute: DashboardParticipantRouteWithChildren,
+  DashboardIndexRoute: DashboardIndexRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
+interface EventsSlugRouteChildren {
+  EventsSlugRegisterRoute: typeof EventsSlugRegisterRoute
+}
+
+const EventsSlugRouteChildren: EventsSlugRouteChildren = {
+  EventsSlugRegisterRoute: EventsSlugRegisterRoute,
+}
+
+const EventsSlugRouteWithChildren = EventsSlugRoute._addFileChildren(
+  EventsSlugRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DashboardRoute: DashboardRouteWithChildren,
+  LoginRoute: LoginRoute,
+  SignupRoute: SignupRoute,
+  AuthCallbackRoute: AuthCallbackRoute,
+  EventsSlugRoute: EventsSlugRouteWithChildren,
+  EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
